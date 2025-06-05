@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /countdown.js
+Disallow: /main.css
+Disallow: /page_styles.css
+# Disallow: /private/ # Приклад заборони доступу до папки
+
+Allow: /
+Sitemap: https://instanttimer.com/sitemap.xml

@@ -1,0 +1,76 @@
+/* Основні стилі для сторінки */
+body {
+    font-family: 'Roboto', sans-serif; /* Змінений шрифт */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Змінено на min-height для гнучкості */
+    margin: 0;
+    background: linear-gradient(135deg, #4CAF50, #2196F3); /* Новий градієнт: зелений до синього */
+    color: #f0f0f0; /* Світліший текст */
+    padding-top: 80px; /* Відступ зверху для фіксованого хедера */
+    padding-bottom: 60px; /* Відступ знизу для фіксованого футера */
+    box-sizing: border-box;
+}
+
+/* Стиль заголовку */
+h1 {
+    margin-bottom: 40px; /* Зменшений відступ */
+    color: #ffffff; /* Білий заголовок */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Контейнер для таймера */
+#countdown-display { /* Новий ID */
+    background: rgba(255, 255, 255, 0.1); /* Світліший, напівпрозорий фон */
+    backdrop-filter: blur(5px); /* Ефект розмиття */
+    padding: 30px 50px; /* Зменшений padding */
+    border-radius: 10px; /* Менший радіус */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Менша тінь */
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Легка рамка */
+}
+
+/* Стиль для таймера */
+#event-timer { /* Новий ID */
+    font-size: 2.8rem; /* Зменшений розмір */
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Стиль для одиниць виміру часу */
+.time-label { /* Новий клас */
+    font-size: 1rem; /* Зменшений розмір */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 8px; /* Зменшений відступ */
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Адаптивні стилі для мобільних пристроїв */
+@media (max-width: 600px) {
+    #event-timer {
+        font-size: 1.8rem;
+    }
+    .time-label {
+        font-size: 0.9rem;
+    }
+    #countdown-display {
+        padding: 20px 30px;
+    }
+}
+
+/* Анімація для завершення таймера */
+@keyframes pulseEnd { /* Нова назва анімації */
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Клас для активації анімації */
+.animate-end-event { /* Новий клас */
+    animation: pulseEnd 1.2s infinite ease-in-out; /* Нова анімація */
+}
