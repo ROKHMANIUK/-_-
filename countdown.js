@@ -15,8 +15,9 @@ function addLeadingZero(value) {
 
 // Функція оновлення таймера
 function updateCountdownTimer() {
-    // --- Додаємо логування тут ---
-    console.log('Оновлення таймера...');
+    // === ЛОГУВАННЯ: Повідомлення про виклик функції ===
+    console.log('--- Функція updateCountdownTimer() викликана ---');
+
     const currentTime = new Date(); // Поточний час
     const difference = targetEventDate - currentTime; // Різниця між цільовою датою і поточним часом
 
@@ -25,7 +26,9 @@ function updateCountdownTimer() {
         document.getElementById("event-timer").innerText = "ПОДІЯ НАСТАЛА!"; // Оновлення тексту
         document.body.style.backgroundColor = "#ffcc00"; // Зміна кольору фону
         document.querySelector('.hero-section').classList.add('event-ended'); // Додаємо клас для анімації/стилю
-        console.log('Подія завершена!'); // Логування завершення
+
+        // === ЛОГУВАННЯ: Повідомлення про завершення події ===
+        console.log('Подія зворотного відліку завершилася!');
         return; // Завершення виконання функції
     }
 
@@ -43,7 +46,7 @@ function updateCountdownTimer() {
     timerElements.minutes.textContent = addLeadingZero(time.minutes);
     timerElements.seconds.textContent = addLeadingZero(time.seconds);
 
-    // Додаткове логування поточних значень
+    // === ЛОГУВАННЯ: Поточні значення зворотного відліку ===
     console.log(`Залишилось: ${time.days} днів, ${time.hours} годин, ${time.minutes} хвилин, ${time.seconds} секунд`);
 }
 
