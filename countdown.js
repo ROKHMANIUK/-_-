@@ -1,4 +1,9 @@
-const targetEventDate = new Date('2025-12-31T23:59:59'); // Дата, до якої буде відліковуватися час
+// === ЛОГУВАННЯ: Привітання при завантаженні сайту ===
+console.log('Привіт, програмісте! Сайт "Моментальний Таймер" успішно завантажено.');
+console.log('----------------------------------------------------');
+
+
+const targetEventDate = new Date('2025-12-31T23:59:59'); // Дата, до якої буде відліковуватися час (можете змінити для тестування)
 
 // Збереження посилань на елементи таймера для зручності
 const timerElements = {
@@ -16,7 +21,7 @@ function addLeadingZero(value) {
 // Функція оновлення таймера
 function updateCountdownTimer() {
     // === ЛОГУВАННЯ: Повідомлення про виклик функції ===
-    console.log('--- Функція updateCountdownTimer() викликана ---');
+    console.log('--> Функція updateCountdownTimer() викликана для оновлення.');
 
     const currentTime = new Date(); // Поточний час
     const difference = targetEventDate - currentTime; // Різниця між цільовою датою і поточним часом
@@ -28,7 +33,8 @@ function updateCountdownTimer() {
         document.querySelector('.hero-section').classList.add('event-ended'); // Додаємо клас для анімації/стилю
 
         // === ЛОГУВАННЯ: Повідомлення про завершення події ===
-        console.log('Подія зворотного відліку завершилася!');
+        console.log('*** Подія зворотного відліку ЗАВЕРШИЛАСЯ! ***');
+        console.log('----------------------------------------------------');
         return; // Завершення виконання функції
     }
 
@@ -47,7 +53,7 @@ function updateCountdownTimer() {
     timerElements.seconds.textContent = addLeadingZero(time.seconds);
 
     // === ЛОГУВАННЯ: Поточні значення зворотного відліку ===
-    console.log(`Залишилось: ${time.days} днів, ${time.hours} годин, ${time.minutes} хвилин, ${time.seconds} секунд`);
+    console.log(`Поточний відлік: ${time.days} днів, ${time.hours} годин, ${time.minutes} хвилин, ${time.seconds} секунд`);
 }
 
 // Виклик функції оновлення щосекунди
